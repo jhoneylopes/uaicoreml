@@ -14,6 +14,7 @@
 		52305A181EECB79700A6D1FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52305A161EECB79700A6D1FF /* LaunchScreen.storyboard */; };
 		52305A231EECB79800A6D1FF /* DetectorDeObjetosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52305A221EECB79800A6D1FF /* DetectorDeObjetosTests.swift */; };
 		52305A2E1EECB79800A6D1FF /* DetectorDeObjetosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52305A2D1EECB79800A6D1FF /* DetectorDeObjetosUITests.swift */; };
+		52FF261E1EEE375300ADB376 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52FF261D1EEE365A00ADB376 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		52305A291EECB79800A6D1FF /* DetectorDeObjetosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetectorDeObjetosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52305A2D1EECB79800A6D1FF /* DetectorDeObjetosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorDeObjetosUITests.swift; sourceTree = "<group>"; };
 		52305A2F1EECB79800A6D1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FF261D1EEE365A00ADB376 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				52305A0D1EECB79700A6D1FF /* AppDelegate.swift */,
 				52305A0F1EECB79700A6D1FF /* ViewController.swift */,
+				52FF261D1EEE365A00ADB376 /* Resnet50.mlmodel */,
 				52305A111EECB79700A6D1FF /* Main.storyboard */,
 				52305A141EECB79700A6D1FF /* Assets.xcassets */,
 				52305A161EECB79700A6D1FF /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF261E1EEE375300ADB376 /* Resnet50.mlmodel in Sources */,
 				52305A101EECB79700A6D1FF /* ViewController.swift in Sources */,
 				52305A0E1EECB79700A6D1FF /* AppDelegate.swift in Sources */,
 			);
@@ -524,6 +528,7 @@
 				52305A341EECB79800A6D1FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52305A351EECB79800A6D1FF /* Build configuration list for PBXNativeTarget "DetectorDeObjetosTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +537,7 @@
 				52305A371EECB79800A6D1FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52305A381EECB79800A6D1FF /* Build configuration list for PBXNativeTarget "DetectorDeObjetosUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +546,7 @@
 				52305A3A1EECB79800A6D1FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

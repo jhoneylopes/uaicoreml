@@ -14,6 +14,8 @@
  */
 
 import UIKit
+import CoreML
+import Vision
 
 class ViewController: UIViewController {
     
@@ -29,6 +31,40 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+}
+
+// MARK: - Functions
+extension ViewController {
+    
+    func detectandoObjeto(imagem: CIImage) {
+        
+        // Carregar o modelo
+        guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
+            fatalError("Não foi possível carregar o modelo.")
+        }
+        
+        // Criando "vision request"
+        let request = VNCoreMLRequest(model: model) { request, error in
+            
+            guard let resultados = request.results as? [VNClassificationObservation], let primeiroResultado = resultados.first else {
+                fatalError("Resultado inesperado! Erro fatal!")
+            }
+            // Atualizar a label de resposta
+            DispatchQueue.main.async {
+                self.resposta.text = "Com a taxa de \(Int(primeiroResultado.confidence * 100))% acredito que seja: \(primeiroResultado.identifier)"
+            }
+        }
+        
+        // Rodar o Core ML para classificação
+        let handler = VNImageRequestHandler(ciImage: imagem)
+        do {
+            try handler.perform([request])
+        } catch {
+            print("Este foi o erro gerado: \(error)")
+        }
+        
     }
     
 }
@@ -56,6 +92,11 @@ extension ViewController: UIImagePickerControllerDelegate {
         }
         imagemDoObjeto.image = imagem
         resposta.text = "identificando objeto..."
+        
+        guard let ciIbagens = CIImage(image: imagem) else {
+            fatalError("Não consegui converter as ibagenssss")
+        }
+        detectandoObjeto(imagem: ciIbagens)
     }
     
 }
@@ -64,4 +105,5 @@ extension ViewController: UIImagePickerControllerDelegate {
 extension ViewController: UINavigationControllerDelegate {
     
 }
+
 
